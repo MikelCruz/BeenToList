@@ -18,21 +18,22 @@ export const BeenList = ({ goBack }) => {
     <main>
       <h1> List of Places </h1>
       <IoChevronBackCircleOutline className="icon-go-back" onClick={handleGoBack} />
-
-      <ul>
+  
+      <div className="places-list">
         {places.map((place, index) => (
-          <li key={index}>
-            {place.name}, {place.city}, {place.country} ({place.latitude}, {place.altitude})
+          <div key={index} className="place-item">
+            <div className="place-detail">Lugar: {place.name}</div>
+            <div className="place-detail">Ciudad: {place.city}</div>
+            <div className="place-detail">Pais: {place.country}</div>
+            <div className="place-detail">Coordenadas: {place.latitude}, {place.altitude}</div>
+            <div className="place-detail">Visitado: {place.visited ? 'visitado' : 'No visitado'}</div>
             <button onClick={() => dispatch(deletePlace(index))}>Delete</button>
             <button onClick={() => dispatch(editPlace({ index, ...place, visited: !place.visited }))}>
               Toggle Visited
             </button>
-          </li>
+          </div>
         ))}
-      </ul>
-
-
+      </div>
     </main>
-
-  )
+  );
 }
