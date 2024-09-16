@@ -15,7 +15,8 @@ export const BeenAddItem = ({ goBack }) => {
     city:     '',
     country:  '',
     latitude: '',
-    altitude: ''
+    altitude: '',
+    visited: false
   });
 
   // Actualizo los datos de los inputs al momento de escribir
@@ -42,10 +43,10 @@ export const BeenAddItem = ({ goBack }) => {
       city:     '',
       country:  '',
       latitude: '',
-      altitude: ''
+      altitude: '',
+      visited: false
     });
 
-    console.log('Datos del formulario:', formData);
   };
 
   const handleGoBack = () => {
