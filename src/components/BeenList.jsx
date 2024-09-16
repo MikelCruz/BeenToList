@@ -16,10 +16,11 @@ export const BeenList = ({ goBack }) => {
 
   return (
     <main>
-      <h1> List of Places </h1>
+      <h1> Lista de Lugares </h1>
       <IoChevronBackCircleOutline className="icon-go-back" onClick={handleGoBack} />
   
       <div className="places-list">
+        {places.length <= 0 && <h2> ¡Aun no has visitado ningún lugar! </h2>}
         {places.map((place, index) => (
           <div key={index} className="place-item">
             <div className="place-detail">Lugar: {place.name}</div>
