@@ -124,3 +124,17 @@ input {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.icon-go-back {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.87);
+  cursor: pointer; 
+  justify-content: start;
+  left: 1rem;
+  top: 1rem; 
+  transition: color 0.3s ease; 
+}
+
+.icon-go-back:hover {
+  color: #8c29e9;
+}

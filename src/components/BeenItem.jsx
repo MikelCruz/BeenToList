@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPlace } from "../redux/placeSlice";
+import { IoChevronBackCircleOutline } from "react-icons/io5";
 
-export const BeenItem = () => {
+
+// eslint-disable-next-line react/prop-types
+export const BeenItem = ({ goBack }) => { 
 
   // const placeData = useSelector((state) => state.place);
   const dispatch = useDispatch();
@@ -45,10 +48,17 @@ export const BeenItem = () => {
     console.log('Datos del formulario:', formData);
   };
 
+  const handleGoBack = () => {
+    goBack();
+  }
+
 
   return (
     <div >
       <h2>Formulario de Ubicación</h2>
+      
+      <IoChevronBackCircleOutline className="icon-go-back" onClick={handleGoBack} />
+
       <form onSubmit={handleSubmit} className="formWrapper">
         <div>
           <label>Nombre</label>
@@ -109,8 +119,6 @@ export const BeenItem = () => {
         <button className="btn-send-form-data" type="submit">Enviar</button>
         
       </form>
-
-      <button className="btn-send-form-data" type="submit">Go back</button>
 
     </div>
   );
