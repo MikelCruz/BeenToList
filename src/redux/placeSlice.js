@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  name:     "",
-  city:     "",
-  country:  "",
-  latitude: "",
-  altitude: "",
+ places: [] // Array de objetos
 }
 
 export const placeSlice = createSlice({
@@ -16,28 +12,40 @@ export const placeSlice = createSlice({
     addPlace: (state, action) => {
 
       // el payload de la accion que despacharemos en un componente de React
-      const { name, city, country, latitude, altitude } = action.payload; 
-      state.name      = name
-      state.city      = city
-      state.country   = country
-      state.latitude  = latitude
-      state.altitude  = altitude
+      const { name, city, country, latitude, altitude, visited } = action.payload; 
+      
+      state.places.push({
+        name,
+        city,
+        country,
+        latitude,
+        altitude,
+        visited: visited ?? false // Por defecto, `visited` es false si no se proporciona
+      });
+
 
     },
 
     // Accion de cambiar datos del lugar --> Actualizamos todos los datos aun que solo cambie uno
-    changePlace: (state, action) => {
+    editPlace: (state, action) => {
 
-      const { name, city, country, latitude, altitude } = action.payload; 
-      state.name      = name
-      state.city      = city
-      state.country   = country
-      state.latitude  = latitude
-      state.altitude  = altitude
-
+      const { index, name, city, country, latitude, altitude, visited } = action.payload;
+      if (state.places[index]) {
+        state.places[index] = {
+          name,
+          city,
+          country,
+          latitude,
+          altitude,
+          visited: visited ?? state.places[index].visited // Mantiene el valor anterior (False) sino se pasa visited en el payload
+        };
+      }
     },
+
+    // TODO --> Delete a Place
+
   }
 })
 
-export const { addPlace, changePlace } = placeSlice.actions
+export const { addPlace, editPlace } = placeSlice.actions
 export default placeSlice.reducer
