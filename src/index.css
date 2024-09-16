@@ -170,3 +170,9 @@ input {
 button {
   margin-right: 10px;
 }
+
+.confirmation-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}

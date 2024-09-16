@@ -6,9 +6,10 @@ import { IoChevronBackCircleOutline } from "react-icons/io5";
 
 // eslint-disable-next-line react/prop-types
 export const BeenAddItem = ({ goBack }) => { 
-
-  // const placeData = useSelector((state) => state.place);
+  
   const dispatch = useDispatch();
+
+  const [showMessage, setShowMessage] = useState(false);
 
   const [formData, setFormData] = useState({
     name:     '',
@@ -30,8 +31,6 @@ export const BeenAddItem = ({ goBack }) => {
 
   // Funcion para guardar datos en el estado
   const handleSubmit = (e) => {
-    
-    // Detengo la recarga de la pagina - TEST
     e.preventDefault();
 
     // Despacho la accion AddPlace para almacenar los datos en el estado global
@@ -47,17 +46,19 @@ export const BeenAddItem = ({ goBack }) => {
       visited: false
     });
 
+    // Mensaje de confirmación
+    setShowMessage(true);
+
+    // Ocultamos el mensaje después de 3 segundos
+    setTimeout(() => setShowMessage(false), 3000);
   };
 
   const handleGoBack = () => {
     goBack();
-  }
-
-  // TODO --> Cuando se envie el Lugar / Place --> Mostrar mensaje al usuario de "TODO OK"
-
+  };
 
   return (
-    <div >
+    <div>
       <h2>Añade el lugar deseado</h2>
       
       <IoChevronBackCircleOutline className="icon-go-back" onClick={handleGoBack} />
@@ -121,8 +122,8 @@ export const BeenAddItem = ({ goBack }) => {
         
         <button className="btn-send-form-data" type="submit">Enviar</button>
         
+        {showMessage && <p className="confirmation-message">Lugar añadido con éxito!</p>}
       </form>
-
     </div>
   );
 }
