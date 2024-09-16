@@ -1,12 +1,16 @@
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { addPlace } from "../redux/placeSlice";
 
 export const BeenItem = () => {
 
+  // const placeData = useSelector((state) => state.place);
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
-    name: '',
-    city: '',
-    country: '',
+    name:     '',
+    city:     '',
+    country:  '',
     latitude: '',
     altitude: ''
   });
@@ -25,6 +29,18 @@ export const BeenItem = () => {
     
     // Detengo la recarga de la pagina - TEST
     e.preventDefault();
+
+    // Despacho la accion AddPlace para almacenar los datos en el estado global
+    dispatch(addPlace(formData))
+
+    // Limpiamos el formulario tras el despacho
+    setFormData({
+      name:     '',
+      city:     '',
+      country:  '',
+      latitude: '',
+      altitude: ''
+    });
 
     console.log('Datos del formulario:', formData);
   };
@@ -91,9 +107,11 @@ export const BeenItem = () => {
         </div>
         
         <button className="btn-send-form-data" type="submit">Enviar</button>
-        <button className="btn-send-form-data" type="submit">Go back</button>
         
       </form>
+
+      <button className="btn-send-form-data" type="submit">Go back</button>
+
     </div>
   );
 }
