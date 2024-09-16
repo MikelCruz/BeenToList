@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BeenItem } from './components/BeenItem.jsx'
+import { BeenAddItem } from './components/BeenAddItem.jsx'
 import { BeenList} from './components/BeenList.jsx'
 import './App.css'
 
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <main>
-      {beenAddPage  && <BeenItem  goBack={() => setBeenAddPage(false)} />}
+      {beenAddPage  && <BeenAddItem  goBack={() => setBeenAddPage(false)} />}
 
       {beenListPage && <BeenList  goBack={() => setBeenListPage(false)} />}
       
