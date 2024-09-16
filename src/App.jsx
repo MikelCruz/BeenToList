@@ -12,7 +12,7 @@ function App() {
 
   return (
     <main>
-      {beenAddPage && <BeenItem />}
+      {beenAddPage && <BeenItem  goBack={() => setBeenAddPage(false)} />}
       
       {!beenAddPage && 
       <>
