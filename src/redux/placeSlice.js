@@ -42,10 +42,16 @@ export const placeSlice = createSlice({
       }
     },
 
-    // TODO --> Delete a Place
+     // Acción para eliminar un lugar
+     deletePlace: (state, action) => {
+      const index = action.payload;
+      if (index >= 0 && index < state.places.length) {
+        state.places.splice(index, 1); // Elimina el lugar en la posición `index`
+      }
+    }
 
   }
 })
 
-export const { addPlace, editPlace } = placeSlice.actions
+export const { addPlace, editPlace, deletePlace } = placeSlice.actions
 export default placeSlice.reducer
