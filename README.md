@@ -2,6 +2,7 @@
 
 **Been To List** es una aplicación pequeña que permite al usuario agregar, editar, marcar como "visitado" y eliminar lugares que ha visitado. La gestión del estado de los lugares se realiza mediante Redux, utilizando Redux Toolkit para simplificar el manejo del estado global.
 
+---
 
 ## Librerías utilizadas
 
@@ -28,9 +29,7 @@ Para empezar con el proyecto, sigue estos pasos:
   ```bash
    npm install
 
+3. **Inicia el servidor de desarrollo**
 
-3. **Inicia el servidor en desarrollo:**
-  
   ```bash
-   npm run dev
-  
+  npm run dev
