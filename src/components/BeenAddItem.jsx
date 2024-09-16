@@ -53,6 +53,8 @@ export const BeenAddItem = ({ goBack }) => {
     goBack();
   }
 
+  // TODO --> Cuando se envie el Lugar / Place --> Mostrar mensaje al usuario de "TODO OK"
+
 
   return (
     <div >
