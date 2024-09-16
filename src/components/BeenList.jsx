@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 
 // eslint-disable-next-line react/prop-types
 export const BeenList = ({ goBack }) => {
+
+  const places = useSelector((state) => state.place.places);
 
   const handleGoBack = () => {
     goBack();
@@ -12,6 +15,16 @@ export const BeenList = ({ goBack }) => {
     <main>
       <h1> List of Places </h1>
       <IoChevronBackCircleOutline className="icon-go-back" onClick={handleGoBack} />
+
+      <ul>
+        {places.map((place, index) => (
+          <li key={index}>
+            {place.name}, {place.city}, {place.country} ({place.latitude}, {place.altitude})
+          </li>
+        ))}
+      </ul>
+
+
     </main>
 
   )
