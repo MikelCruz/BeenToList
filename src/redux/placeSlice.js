@@ -12,14 +12,14 @@ export const placeSlice = createSlice({
     addPlace: (state, action) => {
 
       // el payload de la accion que despacharemos en un componente de React
-      const { name, city, country, latitude, altitude, visited } = action.payload; 
+      const { name, city, country, latitude, longitude, visited } = action.payload; 
       
       state.places.push({
         name,
         city,
         country,
         latitude,
-        altitude,
+        longitude,
         visited: visited ?? false // Por defecto, `visited` es false si no se proporciona
       });
 
@@ -29,14 +29,14 @@ export const placeSlice = createSlice({
     // Accion de cambiar datos del lugar --> Actualizamos todos los datos aun que solo cambie uno
     editPlace: (state, action) => {
 
-      const { index, name, city, country, latitude, altitude, visited } = action.payload;
+      const { index, name, city, country, latitude, longitude, visited } = action.payload;
       if (state.places[index]) {
         state.places[index] = {
           name,
           city,
           country,
           latitude,
-          altitude,
+          longitude,
           visited: visited ?? state.places[index].visited // Mantiene el valor anterior (False) sino se pasa visited en el payload
         };
       }

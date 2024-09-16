@@ -16,7 +16,7 @@ export const BeenAddItem = ({ goBack }) => {
     city:     '',
     country:  '',
     latitude: '',
-    altitude: '',
+    longitude: '',
     visited: false
   });
 
@@ -42,7 +42,7 @@ export const BeenAddItem = ({ goBack }) => {
       city:     '',
       country:  '',
       latitude: '',
-      altitude: '',
+      longitude: '',
       visited: false
     });
 
@@ -100,7 +100,7 @@ export const BeenAddItem = ({ goBack }) => {
         <div>
           <label htmlFor="latitude">Latitud:</label>
           <input
-            type="number"
+            type="text"
             id="latitude"
             name="latitude"
             value={formData.latitude}
@@ -109,12 +109,12 @@ export const BeenAddItem = ({ goBack }) => {
           />
         </div>
         <div>
-          <label htmlFor="altitude">Altitud:</label>
+          <label htmlFor="longitude">Altitud:</label>
           <input
-            type="number"
-            id="altitude"
-            name="altitude"
-            value={formData.altitude}
+            type="text"
+            id="longitude"
+            name="longitude"
+            value={formData.longitude}
             onChange={handleChange}
             required
           />

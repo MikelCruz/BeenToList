@@ -15,7 +15,7 @@ export const BeenList = ({ goBack }) => {
     city: '',
     country: '',
     latitude: '',
-    altitude: '',
+    longitude: '',
     visited: false
   });
 
@@ -60,7 +60,7 @@ export const BeenList = ({ goBack }) => {
             <div className="place-detail">Lugar: {place.name}</div>
             <div className="place-detail">Ciudad: {place.city}</div>
             <div className="place-detail">Pais: {place.country}</div>
-            <div className="place-detail">Coordenadas: {place.latitude}, {place.altitude}</div>
+            <div className="place-detail">Coordenadas: {place.latitude}, {place.longitude}</div>
             <div className="place-detail">Visitado: {place.visited ? 'visitado' : 'No visitado'}</div>
             
             <button onClick={() => dispatch(deletePlace(index))}>Delete</button>
@@ -95,7 +95,7 @@ export const BeenList = ({ goBack }) => {
 
                 <div>
                   <label>Altitud</label>
-                  <input type="number" name="altitude" value={formData.altitude} onChange={handleChange} required/>
+                  <input type="number" name="longitude" value={formData.longitude} onChange={handleChange} required/>
                 </div>
 
                 <div>
