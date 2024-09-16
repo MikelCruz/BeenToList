@@ -66,3 +66,61 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.formWrapper div {
+  flex: 1 1 45%; /* Ajusta el ancho al 45% para 2 columnas */
+  margin: 10px;
+}
+
+
+.btn-add-places {
+  width: 100%;
+  padding: 10px;
+  background-color: #8c29e9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  margin-bottom: 2em;
+}
+
+.btn-show-places {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  margin-bottom: 2em;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.btn-send-form-data {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
