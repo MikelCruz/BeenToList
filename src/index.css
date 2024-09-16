@@ -138,3 +138,35 @@ input {
 .icon-go-back:hover {
   color: #8c29e9;
 }
+
+.places-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  list-style-type: none;
+}
+
+.place-item {
+  background-color: #535353;
+  border: 1px solid #282828;
+  border-radius: 8px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  color: #ffffff;
+}
+
+.place-item:hover {
+  background-color: #666666;
+  border-color: rgba(255, 255, 255, 0.67);
+}
+
+.place-detail {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-right: 10px;
+}
