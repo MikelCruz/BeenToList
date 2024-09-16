@@ -24,11 +24,12 @@ Para empezar con el proyecto, sigue estos pasos:
    git clone https://github.com/tu-usuario/been-to-list.git
    cd been-to-list
 
-
 2. **Instala las dependencias:**
-
+  
+  ```bash
    npm install
 
 3. **Inicia el servidor de desarrollo**
 
+  ```bash
   npm run dev
