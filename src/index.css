@@ -237,3 +237,30 @@ button {
 .btn-delete-place:hover{
   color: rgba(248, 57, 57, 0.75)
 }
+
+.place-item {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #282828;
+  border-radius: 8px;
+}
+
+.place-item.visited {
+  background-color: rgba(69, 209, 62, 0.4);
+  border-color: #c3e6cb;
+}
+
+.place-item.visited::after {
+  content: '✔';
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 2rem;
+  color: rgba(40, 167, 69, 1);
+  text-shadow: 1px 1px 2px black;
+}
+
+.place-item.visited:hover {
+  background-color:  rgba(59, 172, 53, 0.4);
+  border-color: rgba(255, 255, 255, 0.67);
+}

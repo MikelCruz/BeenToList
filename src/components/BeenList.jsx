@@ -61,8 +61,8 @@ export const BeenList = ({ goBack }) => {
         {places.length === 0 && <h2>¡Aun no has visitado ningún lugar!</h2>}
   
         {places.map((place, index) => (
-          <div key={index} className="place-item">
-            <div className="place-detail">
+          <div key={index} className={`place-item ${place.visited ? 'visited' : ''}`}>
+            <div style={{marginTop: 16}} className="place-detail">
               <span>Lugar:</span> <span>{place.name}</span>
             </div>
   
@@ -79,7 +79,7 @@ export const BeenList = ({ goBack }) => {
             </div>
   
             <div className="place-detail">
-              <span>Visitado:</span> <span>{place.visited ? 'Visitado' : 'No visitado'}</span>
+              <span>¿Visitado?</span> <span>{place.visited ? 'Visitado' : 'No visitado'}</span>
             </div>
   
             <div className="place-actions">
@@ -122,7 +122,7 @@ export const BeenList = ({ goBack }) => {
                 </div>
 
                 <div>
-                  <label>Visitado</label>
+                  <label>¿Visitado?</label>
                   <input
                     type="checkbox"
                     name="visited"
