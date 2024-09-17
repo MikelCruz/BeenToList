@@ -45,39 +45,61 @@ export const BeenList = ({ goBack }) => {
     setSelectedPlaceIndex(null);
   };
 
+  // Mostramos 
+  const showInGoogleMaps = (latitude, longitude) => {
+    window.open( `https://www.google.com/maps?q=${latitude},${longitude}`,"_blank")
+  }
+
   return (
     <main>
-      <h1> Lista de Lugares </h1>
+      <h2> Lista de Lugares </h2>
       <IoChevronBackCircleOutline className="icon-go-back" onClick={handleGoBack} />
   
       <div className="places-list">
-        
-        {places.length <= 0 && <h2> ¡Aun no has visitado ningún lugar! </h2>}
-        
+        {places.length === 0 && <h2>¡Aun no has visitado ningún lugar!</h2>}
+  
         {places.map((place, index) => (
           <div key={index} className="place-item">
-            
-            <div className="place-detail">Lugar: {place.name}</div>
-            <div className="place-detail">Ciudad: {place.city}</div>
-            <div className="place-detail">Pais: {place.country}</div>
-            <div className="place-detail">Coordenadas: {place.latitude}, {place.longitude}</div>
-            <div className="place-detail">Visitado: {place.visited ? 'visitado' : 'No visitado'}</div>
-            
-            <button onClick={() => dispatch(deletePlace(index))}>Delete</button>
-            <button onClick={() => handleEditClick(index)}>Editar</button>
-            
-            <button onClick={() => window.open(`https://www.google.com/maps?q=${place.latitude},${place.longitude}`, '_blank')}>
+            <div className="place-detail">
+              <span>Lugar:</span> <span>{place.name}</span>
+            </div>
+  
+            <div className="place-detail">
+              <span>Ciudad:</span> <span>{place.city}</span>
+            </div>
+  
+            <div className="place-detail">
+              <span>País:</span> <span>{place.country}</span>
+            </div>
+  
+            <div className="place-detail">
+              <span>Coordenadas:</span> <span>{place.latitude}, {place.longitude}</span>
+            </div>
+  
+            <div className="place-detail">
+              <span>Visitado:</span> <span>{place.visited ? 'Visitado' : 'No visitado'}</span>
+            </div>
+  
+            <div className="place-actions">
+              <button onClick={() => dispatch(deletePlace(index))}>Eliminar</button>
+              <button onClick={() => handleEditClick(index)}>Editar</button>
+            </div>
+  
+            <button
+              className="place-map-button"
+              onClick={showInGoogleMaps(place.latitude, place.longitude)}
+            >
               Ver en Mapa
             </button>
-            
+  
+            {/* Solo se muestra el formulario de edición para el lugar seleccionado */}
             {selectedPlaceIndex === index && (
               <form onSubmit={handleSubmit} className="edit-form">
-                
                 <div>
                   <label>Nombre</label>
                   <input type="text" name="name" value={formData.name} onChange={handleChange} required/>
                 </div>
-                
+
                 <div>
                   <label>Ciudad</label>
                   <input type="text" name="city" value={formData.city} onChange={handleChange} required/>
@@ -90,12 +112,12 @@ export const BeenList = ({ goBack }) => {
 
                 <div>
                   <label>Latitud</label>
-                  <input type="number" name="latitude" value={formData.latitude} onChange={handleChange} required/>
+                  <input type="text" name="latitude" value={formData.latitude} onChange={handleChange} required/>
                 </div>
 
                 <div>
-                  <label>Altitud</label>
-                  <input type="number" name="longitude" value={formData.longitude} onChange={handleChange} required/>
+                  <label>Longitud</label>
+                  <input type="text" name="longitude" value={formData.longitude} onChange={handleChange} required/>
                 </div>
 
                 <div>
