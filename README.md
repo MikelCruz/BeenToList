@@ -28,7 +28,7 @@ Para empezar con el proyecto, sigue estos pasos:
    ```
 2. **Entra en la carpeta**
    ```bash
-   cd been-to-list
+   cd BeenToList
    ```
    
 3. **Instala las dependencias:**
