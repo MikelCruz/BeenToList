@@ -8,10 +8,10 @@ export const BeenForm = ({ formData, setFormData, selectedPlaceIndex, setSelecte
 
   // Gestionamos el cambio
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
+    const { name, value, type, checked } = e.target;
+    setFormData(prevData => ({
       ...prevData,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     }));
   };
 
@@ -55,14 +55,10 @@ export const BeenForm = ({ formData, setFormData, selectedPlaceIndex, setSelecte
           type="checkbox"
           name="visited"
           checked={formData.visited}
-          onChange={(e) => setFormData((prevData) => ({
-            ...prevData,
-            visited: e.target.checked
-          }))}
+          onChange={handleChange}
         />
       </div>
       <button type="submit">Actualizar</button>
     </form>
   );
 };
-
