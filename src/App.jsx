@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BeenAddItem } from './components/BeenAddItem.jsx'
 import { BeenList} from './components/BeenList.jsx'
 import './App.css'
@@ -8,10 +8,6 @@ function App() {
   const [beenAddPage,   setBeenAddPage]   = useState(false);
   const [beenListPage,  setBeenListPage]  = useState(false);
 
-
-  useEffect(() => {
-    
-  },[])
 
   return (
     <main>
