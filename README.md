@@ -32,4 +32,4 @@ Para empezar con el proyecto, sigue estos pasos:
 3. **Inicia el servidor de desarrollo**
 
   ```bash
-  npm run dev
+   npm run dev

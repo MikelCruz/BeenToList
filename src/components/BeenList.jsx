@@ -45,7 +45,7 @@ export const BeenList = ({ goBack }) => {
     setSelectedPlaceIndex(null);
   };
 
-  // Mostramos 
+  // Mostramos el mapa con las cordenadas
   const showInGoogleMaps = (latitude, longitude) => {
     window.open( `https://www.google.com/maps?q=${latitude},${longitude}`,"_blank")
   }
@@ -85,10 +85,7 @@ export const BeenList = ({ goBack }) => {
               <button onClick={() => handleEditClick(index)}>Editar</button>
             </div>
   
-            <button
-              className="place-map-button"
-              onClick={showInGoogleMaps(place.latitude, place.longitude)}
-            >
+            <button className="place-map-button" onClick={() => showInGoogleMaps(place.latitude, place.longitude)}>
               Ver en Mapa
             </button>
   
