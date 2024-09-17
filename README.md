@@ -18,20 +18,26 @@
 
 Para empezar con el proyecto, sigue estos pasos:
 
+> [!IMPORTANT]
+> ¡Recuerda Poner TU USUARIO al clonar el repositorio en git clone!.
+
 1. **Clona el repositorio:**
 
    ```bash
    git clone https://github.com/tu-usuario/been-to-list.git
+   ```
+2. **Entra en la carpeta**
+   ```bash
    cd been-to-list
    ```
    
-2. **Instala las dependencias:**
+3. **Instala las dependencias:**
   
    ```bash
    npm install
    ```
 
-3. **Inicia el servidor de desarrollo**
+4. **Inicia el servidor de desarrollo**
 
    ```bash
    npm run dev
