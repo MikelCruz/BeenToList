@@ -217,3 +217,23 @@ button {
   font-weight: bold;
   margin-top: 10px;
 }
+
+.btn-edit-place{
+  font-size: 2em;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-edit-place:hover{
+  color: rgba(101, 160, 243, 0.75)
+}
+
+.btn-delete-place{
+  font-size: 2em;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-delete-place:hover{
+  color: rgba(248, 57, 57, 0.75)
+}

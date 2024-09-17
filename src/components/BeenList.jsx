@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { editPlace, deletePlace } from "../redux/placeSlice";
+import { FaRegEdit } from "react-icons/fa";
+import { MdDeleteOutline } from "react-icons/md";
 
 // eslint-disable-next-line react/prop-types
 export const BeenList = ({ goBack }) => {
@@ -81,8 +83,10 @@ export const BeenList = ({ goBack }) => {
             </div>
   
             <div className="place-actions">
-              <button onClick={() => dispatch(deletePlace(index))}>Eliminar</button>
-              <button onClick={() => handleEditClick(index)}>Editar</button>
+
+              <FaRegEdit className="btn-edit-place" onClick={() => handleEditClick(index)} ></FaRegEdit>
+              <MdDeleteOutline className="btn-delete-place" onClick={() => dispatch(deletePlace(index))} ></MdDeleteOutline>
+              
             </div>
   
             <button className="place-map-button" onClick={() => showInGoogleMaps(place.latitude, place.longitude)}>
