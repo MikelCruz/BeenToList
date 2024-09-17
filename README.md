@@ -16,15 +16,13 @@
 
 ## Inicialización del Proyecto
 
-Para empezar con el proyecto, sigue estos pasos:
-
 > [!IMPORTANT]
 > ¡Recuerda Poner TU USUARIO al clonar el repositorio en git clone!.
 
 1. **Clona el repositorio:**
 
    ```bash
-   git clone https://github.com/tu-usuario/been-to-list.git
+   git clone https://github.com/tu-usuario/BeenToList.git
    ```
 2. **Entra en la carpeta**
    ```bash
