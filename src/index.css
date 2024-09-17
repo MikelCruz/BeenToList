@@ -83,13 +83,18 @@ button:focus-visible {
 .btn-add-places {
   width: 100%;
   padding: 10px;
-  background-color: #8c29e9;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
   margin-bottom: 2em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add-places:hover {
+  background-color: #8c29e9;
+  cursor: pointer;
 }
 
 .btn-show-places {
@@ -100,8 +105,13 @@ button:focus-visible {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
   margin-bottom: 2em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-show-places:hover {
+  background-color: #8c29e9;
+  cursor: pointer;
 }
 
 label {
@@ -156,6 +166,10 @@ input {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .place-item:hover {
@@ -164,7 +178,34 @@ input {
 }
 
 .place-detail {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.place-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.place-map-button {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.place-map-button:hover {
+  background-color: #0056b3;
 }
 
 button {
