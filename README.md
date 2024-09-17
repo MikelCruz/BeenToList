@@ -23,13 +23,16 @@ Para empezar con el proyecto, sigue estos pasos:
    ```bash
    git clone https://github.com/tu-usuario/been-to-list.git
    cd been-to-list
-
+   ```
+   
 2. **Instala las dependencias:**
   
-  ```bash
+   ```bash
    npm install
+   ```
 
 3. **Inicia el servidor de desarrollo**
 
-  ```bash
+   ```bash
    npm run dev
+   ```
